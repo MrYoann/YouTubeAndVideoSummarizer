@@ -1,2 +1,2 @@
-# YouTubeAndVideoSummarrizer
+# YouTubeAndVideoSummarizer
 A small Python App to summarize YouTube and local Video.
