@@ -1,0 +1,7 @@
+{
+    "whisper_path": "PATH/TO/WHISPER",
+    "smtp_server": "smtp.yourserver.com",
+    "port": "Port (for instance 587)",
+    "email": "email@email.com",
+    "password": "yourpassword"
+}
