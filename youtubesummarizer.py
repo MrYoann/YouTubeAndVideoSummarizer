@@ -1,8 +1,8 @@
 import sys
-import subprocess
-import os
 import threading
+import os
 import json
+import subprocess
 import time
 from PyQt5.QtCore import pyqtSignal, QObject
 from PyQt5.QtGui import QTextCursor, QColor
@@ -11,34 +11,6 @@ from PyQt5.QtWidgets import (
     QPushButton, QTextEdit, QComboBox, QMessageBox, QFileDialog
 )
 
-def install_dependencies():
-    """Check and install necessary dependencies."""
-    dependencies = ["PyQt5", "yt-dlp", "ffmpeg-python"]
-
-    print("Checking and installing dependencies...")
-    for dependency in dependencies:
-        try:
-            subprocess.check_call([sys.executable, "-m", "pip", "show", dependency], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            print(f"{dependency} is already installed.")
-        except subprocess.CalledProcessError:
-            print(f"{dependency} is not installed. Installing...")
-            subprocess.check_call([sys.executable, "-m", "pip", "install", dependency])
-
-    # Check if FFmpeg is installed
-    print("\nChecking FFmpeg installation...")
-    try:
-        subprocess.run(["ffmpeg", "-version"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True)
-        print("FFmpeg is already installed.")
-    except FileNotFoundError:
-        print("FFmpeg is not installed. Please install it manually:")
-        print("- Windows: Download from https://ffmpeg.org/download.html and add it to your PATH.")
-        print("- Linux/macOS: Use your package manager (e.g., `sudo apt install ffmpeg` on Ubuntu).")
-
-# Run the dependency installation at the start of the script
-install_dependencies()
-
-class LogHandler(QObject):
-    log_signal = pyqtSignal(str, bool)
 
 class LogHandler(QObject):
     log_signal = pyqtSignal(str, bool)
