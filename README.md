@@ -13,6 +13,7 @@ This application allows you to generate transcripts and summaries for YouTube vi
 - Python 3.8 or later
 - pip
 - Operating System: Should work on Windows, macOS, or Linux if Python 3.x and following packages are installed
+- A valid email address to send the results
 
 ### Python Dependencies
 The following Python packages are required:
